@@ -88,7 +88,7 @@ def print_colored_background(text: str, background: str = "BLACK") -> str:
     return background_dict.get(background.upper(), Back.BLACK) + text
 
 # Printing examples
-print(colored_text("Insanity is doing the exact same fucking thing over and over again, expecting shit to change. That is crazy", "RED"))
+print(colored_text("Insanity is doing the exact same thing over and over again, expecting it to change. That is crazy", "RED"))
 print(print_colored_background("Maria", "YELLOW"))
 print(colored_text("In case I don't see ya, have a good afternoon, good evening, and good night!", "CYAN"))
 print(print_colored_background("gobbledygook", "GREEN")) # In case you didn't know, it means language that’s meaningless or hard to understand,
