@@ -7,9 +7,11 @@ db = SQLAlchemy()
 class Product(db.Model):
     __tablename__ = 'products'
 
-# Define columns
+# Making columns for the Products table
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String(100), nullable=False)
+    author = db.Column(db.String(100), nullable=False)
     price = db.Column(db.Float, nullable=False)
     quantity = db.Column(db.Integer, nullable=False)
+    
     
