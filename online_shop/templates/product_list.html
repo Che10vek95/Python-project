@@ -11,20 +11,30 @@
         <th>ID</th>
         <th>Product Name</th>
         <th>Author</th>
+        <th>Description</th>
         <th>Price</th>
         <th>Quantity</th>
         <th>Created</th>
         <th>Updated</th>
+        <th>Status</th>
+        <th>Category</th>
+        <th>Avarage rating</th>
+        <th>Status</th>
     </tr>
     {% for product in products %}
     <tr>
         <th>{{product.id}}</th>
         <th>{{product.name}}</th>
         <th>{{product.author}}</th>
+        <th>{{product.description}}</th>
         <th>{{product.price}}</th>
         <th>{{product.quantity}}</th>
         <th>{{product.created_at}}</th>
         <th>{{product.updated_at}}</th>
+        <th>{{product.status}}</th>
+        <th>{{product.category}}</th>
+        <th>{{product.rating}}</th>
+        <th>{{product.sale}}</th>
     </tr>
     {% endfor %}
 </table>
