@@ -19,4 +19,4 @@ class Product(db.Model):
     status = db.Column(db.Boolean, nullable=True, default=True)
     category = db.Column(db.String(50), nullable=True)
     rating = db.Column(db.Float, nullable=True, default=0.0)
-    sale = db.Columndb.Column(db.Boolean, nullable=True, default=False)
+    sale = db.Column(db.Boolean, nullable=True, default=False)
