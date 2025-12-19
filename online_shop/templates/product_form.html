@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>{{ action }} Product </h1>
+    <form method="POST">
+        <label>Name:
+            <input type="text" name="name" value="{{ product.name if product else '' }}" required>
+        </label> <br>
+
+        <label>Author:
+            <input type="text" name="author" value="{{ product.author if product else '' }}">
+        </label> <br>
+
+        <label>Description:
+            <input type="text" name="description" value="{{ product.description if product else '' }}">
+        </label> <br>
+
+        <label>Price:
+            <input type="number" step="10" name="price" min="0" value="{{ product.price if product else '' }}" required> 
+        </label> <br>
+
+        <label>Quantity:
+            <input type="number" name="quantity" min="0" value="{{ product.quantity if product else '' }}" required>
+        </label> <br>
+
+        <label>Category:
+            <input type="text" name="category" value="{{ product.category if product else '' }}">
+        </label> <br>
+
+        <label>Avarage rating:
+            <input type="number" name="average_rating" step="0.1" min="0" max="5" value="{{ product.average_rating if product else '' }}" >
+        </label> <br>
+
+        <label>Active:
+            <input type="checkbox" name="active" value="{{ product.status if product else '' }}" {{ 'checked' if product and product.status else '' }}>
+        </label> <br>
+
+        <label>Sale:
+            <input type="checkbox" name="sale" value="{{ product.sale if product else '' }}" {{ 'checked' if product and product.sale else '' }}>
+        </label> <br>
+
+        <button type="submit">{{ action }} Product</button>
+    </form>
+    <a href="{{ url_for('routes.products') }}">Back to products list</a>
+</table>
+</body>
+</html>

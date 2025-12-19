@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1>Product List</h1>
+     <a href="{{ url_for('routes.add_product') }}">Add Product</a>
 <table border="1">
     <tr>
         <th>ID</th>
@@ -19,7 +20,7 @@
         <th>Status</th>
         <th>Category</th>
         <th>Avarage rating</th>
-        <th>Status</th>
+        <th>Sale</th>
     </tr>
     {% for product in products %}
     <tr>
