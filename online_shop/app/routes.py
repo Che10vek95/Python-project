@@ -7,7 +7,8 @@ bp = Blueprint('routes', __name__)
 # Define route for the home page
 @bp.route('/')
 def index():
-    return render_template('index.html')
+    products = Product.query.all()
+    return render_template('index.html', products=products)
 
 @bp.route('/products')
 def products():

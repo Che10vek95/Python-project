@@ -2,8 +2,26 @@
 <html>
     <head>
         <title>Hello</title>  
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     
     <body>
-        <h1><a href="http://127.0.0.1:5000/products">Products list</a></h1>
+        <h1>Product List</h1>
+        <div class="action-bar">
+            <a class="btn" href="{{ url_for('routes.products') }}">Product list</a>
+        </div>
+
+        <div class="products">
+            {% for product in products %}
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/' ~ product.id ~ '.png') }}"
+                    alt="{{ product.name }}"
+                    onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/default.png') }}'">
+                    <h2 class="product-name">{{ product.name }}</h2>
+                    <p class="product-feature">Price: ${{ '%.2f' | format(product.price) }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <script src="{{ url_for('static', filename='modal.js') }}"></script>
+    </body>
 </html>
