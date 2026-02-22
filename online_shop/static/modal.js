@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
       modalImage.src = attrs.image;
       modalName.textContent = attrs.name;
       modalPrice.textContent = 'Price: $' + attrs.price;
-      modalquantity.textContent = 'quantity: ' + attrs.quantity;
+      modalQuantity.textContent = 'Quantity: ' + attrs.quantity;
       modalDesc.textContent = attrs.description || 'No description';
       modalMeta.innerHTML = buildMetaHTML(attrs);
 
