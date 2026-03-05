@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var modalClose = document.querySelector('.modal-close');
 
 
+
   function openModal() {
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
@@ -24,7 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
  function buildMetaHTML(attrs) {
     return `
       <p><strong>Category:</strong> ${attrs.category || '—'}
-      • <strong>Rating:</strong> ${attrs.rating || '—'}
+      <div class="rating" data-rating="${attrs.rating || 0}">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+      </div>
+
       • <strong>Sale:</strong> ${attrs.sale || 'False'}
       • <strong>Active:</strong> ${attrs.active || 'False'}
       </p>
@@ -52,7 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
       modalDesc.textContent = attrs.description || 'No description';
       modalMeta.innerHTML = buildMetaHTML(attrs);
 
-
+const ratingDiv = modal.querySelector('.rating');
+      updateRatingStars(ratingDiv);
+      
       openModal();
     });
   });
